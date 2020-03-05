@@ -1,6 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Theme Jam Example Submission",
+    title: "title",
+    author: "author",
   },
-  plugins: ["gatsby-plugin-theme-ui"],
-}
+  plugins: [
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/Layout.js"),
+        },
+      },
+    },
+    `gatsby-plugin-material-ui`,
+  ],
+};

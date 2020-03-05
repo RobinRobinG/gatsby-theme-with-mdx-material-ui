@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-jam-example"],
+  plugins: ["@robinguan/gatsby-mdx-mui-theme"],
 }
