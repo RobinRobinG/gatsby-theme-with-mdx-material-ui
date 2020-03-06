@@ -8,18 +8,25 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.primary,
     padding: theme.spacing(2),
     marginTop: theme.spacing(2),
+    marginRight: theme.spacing(0),
+    marginLeft: theme.spacing(0),
   },
 }));
 
-export default function Footer({ children }) {
+export default function Footer({ author }) {
   const classes = useStyles();
   const year = new Date().getFullYear();
 
   return (
     <Container component="footer" className={classes.footer}>
       <Typography variant="body2" color="textSecondary">
-        © {year}, by {children}
+        © {year}
       </Typography>
+      {author && (
+        <Typography variant="body2" color="textSecondary">
+          made with love by {author}
+        </Typography>
+      )}
     </Container>
   );
 }

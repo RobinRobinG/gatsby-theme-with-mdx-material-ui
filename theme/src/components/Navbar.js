@@ -8,14 +8,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Navbar = ({ children }) => {
+const Navbar = ({ title }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">{children}</Typography>
+          <Typography variant="h6">{title}</Typography>
         </Toolbar>
       </AppBar>
     </div>

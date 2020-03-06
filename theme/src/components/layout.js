@@ -2,9 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "../gatsby-plugin-theme-ui/theme";
+import theme from "../theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import {
   Typography,
   Link,
@@ -12,7 +13,6 @@ import {
   Box,
   CssBaseline,
 } from "@material-ui/core";
-import { graphql, useStaticQuery } from "gatsby";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -34,16 +34,7 @@ const components = {
 
 const Layout = ({ children }) => {
   const classes = useStyles();
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          author
-        }
-      }
-    }
-  `);
+  const { title, author } = useSiteMetadata();
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,11 +45,12 @@ const Layout = ({ children }) => {
           flexDirection="column"
           style={{ minHeight: "100vh" }}
         >
-          <Navbar>{data.site.siteMetadata.title}</Navbar>
+          <Navbar title={title} />
+
           <Container maxWidth="sm" className={classes.container}>
             {children}
           </Container>
-          <Footer>{data.site.siteMetadata.author}</Footer>
+          <Footer author={author} />
         </Box>
       </MDXProvider>
     </ThemeProvider>

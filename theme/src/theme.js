@@ -34,6 +34,21 @@ const theme = createMuiTheme({
       fontWeight: 500,
     },
   },
+  // overrides: {
+  //   MuiCssBaseline: {
+  //     "@global": {
+  //       body: {
+  //         backgroundImage:
+  //           "url(https://source.unsplash.com/random/1024x768?sky)",
+  //         backgroundRepeat: "no-repeat",
+  //         backgroundPosition: "center center",
+  //         backgroundSize: "cover",
+  //         backgroundAttachment: "fixed",
+  //         height: "100%",
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export default theme;
