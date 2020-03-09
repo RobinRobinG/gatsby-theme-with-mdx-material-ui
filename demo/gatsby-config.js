@@ -6,10 +6,27 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Hello",
-    author: "author hello",
-    description:
-      "Cotton candy powder jelly beans muffin ice cream carrot cake bonbon cookie icing. Tiramisu dessert marshmallow cotton candy pudding halvah. Macaroon candy canes oat cake carrot cake jujubes.",
+    title: "😀 John Doe",
+    author: "John",
+    description: "I’m John and I’m a full stack developer!",
+    social: [
+      {
+        name: "linkedin",
+        url: "https://www.linkedin.com/",
+      },
+      {
+        name: "github",
+        url: "https://www.facebook.com/",
+      },
+      {
+        name: "email",
+        url: "https://www.instagram.com/",
+      },
+      {
+        name: "website",
+        url: "https://www.twitter.com/",
+      },
+    ],
   },
   plugins: [
     "@robinguan/gatsby-mdx-mui-theme",

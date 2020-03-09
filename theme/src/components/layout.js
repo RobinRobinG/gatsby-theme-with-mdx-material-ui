@@ -1,24 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../theme";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Parallax from "./Parallax";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
-import {
-  Typography,
-  Link,
-  Container,
-  Box,
-  CssBaseline,
-} from "@material-ui/core";
-
-const useStyles = makeStyles(theme => ({
-  container: {
-    flex: 1,
-  },
-}));
+import { Typography, Link, Box, CssBaseline } from "@material-ui/core";
+import ScrollTop from "./ScrollTop";
 
 const components = {
   p: props => <Typography paragraph {...props} />,
@@ -32,9 +21,10 @@ const components = {
   pre: props => <div {...props} />,
 };
 
-const Layout = ({ children }) => {
-  const classes = useStyles();
-  const { title, author } = useSiteMetadata();
+const Layout = props => {
+  const { children } = props;
+  const data = useSiteMetadata();
+  const { title, author } = data;
 
   return (
     <ThemeProvider theme={theme}>
@@ -46,12 +36,11 @@ const Layout = ({ children }) => {
           style={{ minHeight: "100vh" }}
         >
           <Navbar title={title} />
-
-          <Container maxWidth="sm" className={classes.container}>
-            {children}
-          </Container>
+          <Parallax data={data} />
+          {children}
           <Footer author={author} />
         </Box>
+        <ScrollTop {...props} />
       </MDXProvider>
     </ThemeProvider>
   );

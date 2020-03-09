@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    marginBottom: theme.spacing(2),
-  },
+  // root: {
+  //   marginBottom: theme.spacing(2),
+  // },
 }));
 
 const Navbar = ({ title }) => {
@@ -15,7 +15,9 @@ const Navbar = ({ title }) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">{title}</Typography>
+          <Typography variant="h6" id="back-to-top-anchor">
+            {title}
+          </Typography>
         </Toolbar>
       </AppBar>
     </div>

@@ -3,10 +3,11 @@ import { createMuiTheme } from "@material-ui/core/styles";
 // A custom theme for this app
 const theme = createMuiTheme({
   palette: {
+    type: "light",
     primary: {
-      light: "#9CC8F4",
-      main: "#0774F2",
-      dark: "#246EB9",
+      light: "#64b5f6",
+      main: "#536DFE",
+      dark: "#1976d2",
     },
     secondary: {
       light: "#F2F7F2",
@@ -21,9 +22,6 @@ const theme = createMuiTheme({
       main: "#949FA6",
       dark: "#4C4B63",
     },
-    background: {
-      default: "#FCFDFF",
-    },
   },
   typography: {
     subtitle1: {
@@ -34,21 +32,6 @@ const theme = createMuiTheme({
       fontWeight: 500,
     },
   },
-  // overrides: {
-  //   MuiCssBaseline: {
-  //     "@global": {
-  //       body: {
-  //         backgroundImage:
-  //           "url(https://source.unsplash.com/random/1024x768?sky)",
-  //         backgroundRepeat: "no-repeat",
-  //         backgroundPosition: "center center",
-  //         backgroundSize: "cover",
-  //         backgroundAttachment: "fixed",
-  //         height: "100%",
-  //       },
-  //     },
-  //   },
-  // },
 });
 
 export default theme;

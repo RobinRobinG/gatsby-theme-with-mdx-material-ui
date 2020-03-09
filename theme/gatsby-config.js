@@ -24,6 +24,15 @@ module.exports = {
     ],
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          // include: /assets/,
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
