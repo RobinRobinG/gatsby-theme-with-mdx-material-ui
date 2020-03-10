@@ -4,21 +4,22 @@ import { Box, Grid, Typography, Container, Hidden } from "@material-ui/core";
 import Link from "./Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import LanguageIcon from "@material-ui/icons/Language";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import Image from "../assets/Avatar.inline.svg";
+import Background from "../assets/Background.svg";
+import "./waving-hand.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // backgroundImage: `url(${Image})`,
-    backgroundColor: theme.palette.secondary.light,
-    // backgroundRepeat: "no-repeat",
-    // backgroundPosition: "75% 75%",
+    background: `url(${Background})`,
+    backgroundPosition: "top right",
+    backgroundSize: "auto 100%",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "local",
+    overflow: "hidden",
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
+  text: {
+    background: "rgba(250, 250, 250, 0.5)",
   },
 }));
 
@@ -30,9 +31,6 @@ function renderIcon(name) {
       break;
     case "linkedin":
       icon = <LinkedInIcon color="primary" fontSize="small" />;
-      break;
-    case "website":
-      icon = <LanguageIcon color="primary" fontSize="small" />;
       break;
     case "email":
       icon = <MailOutlineIcon color="primary" fontSize="small" />;
@@ -52,11 +50,21 @@ function Parallax({ data }) {
   const { description, social } = data;
 
   return (
-    <Box className={classes.root} display="block" pt={8} pb={4}>
+    <Box
+      className={classes.root}
+      display="block"
+      pt={14}
+      pb={4}
+      borderTop={10}
+      borderColor="primary.main"
+    >
       <Grid container spacing={3}>
         <Grid item xs={12} sm={7}>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" className={classes.text}>
             <Typography variant="h3" gutterBottom>
+              <span className="wave" role="img" aria-label="waving-hand-emoji">
+                👋
+              </span>{" "}
               Hi there!
             </Typography>
             <Typography variant="h4" color="textSecondary">

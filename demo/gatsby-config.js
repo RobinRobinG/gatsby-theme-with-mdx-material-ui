@@ -20,11 +20,7 @@ module.exports = {
       },
       {
         name: "email",
-        url: "https://www.instagram.com/",
-      },
-      {
-        name: "website",
-        url: "https://www.twitter.com/",
+        url: "mailto:hello@robinguan.com",
       },
     ],
   },

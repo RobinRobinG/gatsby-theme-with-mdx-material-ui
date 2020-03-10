@@ -2,11 +2,10 @@ import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../theme";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Parallax from "./Parallax";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
-import { Typography, Link, Box, CssBaseline } from "@material-ui/core";
+import { Typography, Link, Box, CssBaseline, Toolbar } from "@material-ui/core";
 import ScrollTop from "./ScrollTop";
 
 const components = {
@@ -24,7 +23,7 @@ const components = {
 const Layout = props => {
   const { children } = props;
   const data = useSiteMetadata();
-  const { title, author } = data;
+  const { author } = data;
 
   return (
     <ThemeProvider theme={theme}>
@@ -35,7 +34,7 @@ const Layout = props => {
           flexDirection="column"
           style={{ minHeight: "100vh" }}
         >
-          <Navbar title={title} />
+          <Toolbar id="back-to-top-anchor" style={{ minHeight: 0 }} />
           <Parallax data={data} />
           {children}
           <Footer author={author} />
