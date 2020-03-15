@@ -1,11 +1,11 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
+import { Typography, Link, Box, CssBaseline, Toolbar } from '@material-ui/core';
 import theme from '../theme';
 import Footer from './Footer';
 import Parallax from './Parallax';
-import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import { Typography, Link, Box, CssBaseline, Toolbar } from '@material-ui/core';
 import ScrollTop from './ScrollTop';
 
 const components = {

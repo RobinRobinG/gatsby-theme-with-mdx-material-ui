@@ -4,3 +4,4 @@ export { default as ImageContainer } from './src/components/ImageContainer';
 export { default as TwoColumnsGrid } from '././src/components/TwoColumnsGrid';
 export { default as FourColumnsGrid } from '././src/components/FourColumnsGrid';
 export { default as Chips } from '././src/components/Chips';
+export { default as Buttons } from '././src/components/Buttons';

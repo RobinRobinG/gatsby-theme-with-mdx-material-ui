@@ -1,36 +1,36 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Chip } from '@material-ui/core';
+import { Container, Button } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     flexWrap: 'wrap',
-    marginBottom: '1rem',
     '& > *': {
       margin: theme.spacing(0.5),
     },
   },
 }));
 
-const Chips = ({ chips }) => {
+const Buttons = ({ buttons }) => {
   const classes = useStyles();
   return (
     <Container maxWidth="sm" className={classes.text}>
       <div className={classes.root}>
-        {chips.map((chip, index) => (
-          <Chip
-            label={chip}
-            color="primary"
-            size="small"
-            variant="outlined"
+        {buttons.map((button, index) => (
+          <Button
+            color={button.color}
+            href={button.href}
             key={index}
-          />
+            variant="contained"
+          >
+            {button.label}
+          </Button>
         ))}
       </div>
     </Container>
   );
 };
 
-export default Chips;
+export default Buttons;

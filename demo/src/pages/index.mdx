@@ -2,9 +2,10 @@
 title: Home Page
 ---
 
-import { Section, Button, ImageContainer, TwoColumnsGrid } from "@robinguan/gatsby-mdx-mui-theme"
+import { Section, Button, ImageContainer, TwoColumnsGrid, Chips, Buttons } from "@robinguan/gatsby-mdx-mui-theme"
 
 <Section background={"#D0CDE1"}>
+<Chips chips={['ele1', 'ele2', 'ele3', 'ele4', 'ele5']} />
 <ImageContainer width={'50%'}>
 
 ![notes](./notes.png)
@@ -13,6 +14,9 @@ import { Section, Button, ImageContainer, TwoColumnsGrid } from "@robinguan/gats
 <h4>Project Name</h4>
 <p>A web application to help sdevelopers and programmers build beautifully designed portfolios in minutes </p>
 <Button color={'primary'} href={'https://www.google.com/'}>Hello</Button>
+
+<Buttons buttons={[{label:'frist button', href:'https://www.google.com/', color: 'primary'}, {label:'second button', href:'https://www.google.com/', color: 'primary'}]} />
+
 </Section>
 
 <Section background={"#fff"}>

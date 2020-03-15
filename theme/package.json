@@ -1,7 +1,7 @@
 {
   "name": "@robinguan/gatsby-mdx-mui-theme",
   "author": "Robin Guan <hello@robinguan.com>",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
