@@ -1,38 +1,45 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Box, Grid, Typography, Container, Hidden } from "@material-ui/core";
-import Link from "./Link";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import Image from "../assets/Avatar.inline.svg";
-import Background from "../assets/Background.svg";
-import "./waving-hand.css";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Box,
+  Grid,
+  Typography,
+  Container,
+  Hidden,
+  useMediaQuery,
+} from '@material-ui/core';
+import Link from './Link';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import Image from '../assets/Avatar.inline.svg';
+import Background from '../assets/Background.svg';
+import './css-animation.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
     background: `url(${Background})`,
-    backgroundPosition: "top right",
-    backgroundSize: "auto 100%",
-    backgroundRepeat: "no-repeat",
-    backgroundAttachment: "local",
-    overflow: "hidden",
+    backgroundPosition: 'top right',
+    backgroundSize: 'auto 100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'local',
+    overflow: 'hidden',
   },
   text: {
-    background: "rgba(250, 250, 250, 0.5)",
+    background: 'rgba(250, 250, 250, 0.5)',
   },
 }));
 
 function renderIcon(name) {
   let icon;
   switch (name) {
-    case "github":
+    case 'github':
       icon = <GitHubIcon color="primary" fontSize="small" />;
       break;
-    case "linkedin":
+    case 'linkedin':
       icon = <LinkedInIcon color="primary" fontSize="small" />;
       break;
-    case "email":
+    case 'email':
       icon = <MailOutlineIcon color="primary" fontSize="small" />;
       break;
     default:
@@ -47,11 +54,12 @@ function getSocialName(name) {
 
 function Parallax({ data }) {
   const classes = useStyles();
+  const matches = useMediaQuery('(max-width:600px)');
   const { description, social } = data;
 
   return (
     <Box
-      className={classes.root}
+      className={matches === false ? classes.root : ''}
       display="block"
       pt={14}
       pb={4}
@@ -64,8 +72,8 @@ function Parallax({ data }) {
             <Typography variant="h3" gutterBottom>
               <span className="wave" role="img" aria-label="waving-hand-emoji">
                 👋
-              </span>{" "}
-              Hi there!
+              </span>
+              <div className="rubberBand">Hi there!</div>
             </Typography>
             <Typography variant="h4" color="textSecondary">
               {description}
