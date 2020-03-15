@@ -2,7 +2,7 @@
 title: Home Page
 ---
 
-import { Section, Button, ImageContainer } from "@robinguan/gatsby-mdx-mui-theme"
+import { Section, Button, ImageContainer, TwoColumnsGrid } from "@robinguan/gatsby-mdx-mui-theme"
 
 <Section background={"#D0CDE1"}>
 <ImageContainer width={'50%'}>
@@ -23,7 +23,11 @@ import { Section, Button, ImageContainer } from "@robinguan/gatsby-mdx-mui-theme
 </ImageContainer>
 <h4>Project Name</h4>
 <p>A web application to help sdevelopers and programmers build beautifully designed portfolios in minutes </p>
-<Button color={'primary'} href={'https://www.google.com/'}>Hello</Button>
+<TwoColumnsGrid right={ <ImageContainer width={'80%'}>
+
+![notes](./notes.png)
+
+</ImageContainer> } left={<Button color={'primary'} href={'https://www.google.com/'}>Hello</Button>} />
 </Section>
 
 <Section background={"#D0CDE1"}>
