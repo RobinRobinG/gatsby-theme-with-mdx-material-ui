@@ -7,7 +7,6 @@ import Parallax from './Parallax';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Typography, Link, Box, CssBaseline, Toolbar } from '@material-ui/core';
 import ScrollTop from './ScrollTop';
-import Chips from './Chips';
 
 const components = {
   p: props => <Typography paragraph {...props} />,
@@ -37,7 +36,6 @@ const Layout = props => {
         >
           <Toolbar id="back-to-top-anchor" style={{ minHeight: 0 }} />
           <Parallax data={data} />
-          <Chips chips={['hello', 'kitty', 'is', 'a', 'cat']} />
           {children}
           <Footer author={author} />
         </Box>
