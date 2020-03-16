@@ -21,7 +21,7 @@ const ImageContainer = ({ children, width, borderColor }) => {
       className={classes.root}
       borderColor={borderColor}
       borderRadius={6}
-      boxShadow={6}
+      boxShadow={2}
       border={1}
       style={{
         width: `${width}`,
