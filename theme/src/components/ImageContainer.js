@@ -14,15 +14,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ImageContainer = ({ children, width, borderColor }) => {
+const ImageContainer = ({ children, width, border, borderColor }) => {
   const classes = useStyles();
   return (
     <Box
       className={classes.root}
       borderColor={borderColor}
-      borderRadius={6}
-      boxShadow={2}
-      border={1}
+      borderRadius={border > 0 ? 6 : 0}
+      boxShadow={border > 0 ? 2 : 0}
+      border={border > 0 ? border : 0}
       style={{
         width: `${width}`,
       }}
