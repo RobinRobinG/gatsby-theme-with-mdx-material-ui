@@ -1,18 +1,9 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles(theme => ({
-  // root: {
-  //   marginBottom: theme.spacing(2),
-  // },
-}));
+import React from 'react';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 const Navbar = ({ title }) => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" id="back-to-top-anchor">

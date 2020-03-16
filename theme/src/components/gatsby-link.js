@@ -1,5 +1,5 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
+import React from 'react';
+import { Link as GatsbyLink } from 'gatsby';
 
 function ALink({ to, children, innerRef, ...other }) {
   return (
@@ -15,7 +15,6 @@ const Link = React.forwardRef(function Link(
 ) {
   const internal = /^\/(?!\/)/.test(to);
 
-  // Use Gatsby Link for internal links, and <a> for others
   if (internal) {
     const file = /\.[0-9a-z]+$/i.test(to);
 
