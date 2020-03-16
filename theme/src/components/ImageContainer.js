@@ -7,18 +7,22 @@ const useStyles = makeStyles(theme => ({
     margin: '0 auto',
     '& > p': {
       margin: theme.spacing(0),
+      '& *': {
+        borderRadius: '6px',
+      },
     },
   },
 }));
 
-const ImageContainer = ({ children, width, borderRadius, borderColor }) => {
+const ImageContainer = ({ children, width, borderColor }) => {
   const classes = useStyles();
   return (
     <Box
       className={classes.root}
       borderColor={borderColor}
+      borderRadius={6}
+      boxShadow={6}
       border={1}
-      borderRadius={borderRadius}
       style={{
         width: `${width}`,
       }}
