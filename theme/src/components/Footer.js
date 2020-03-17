@@ -1,6 +1,7 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Container } from "@material-ui/core";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Container } from '@material-ui/core';
+import './css-animation.css';
 
 const useStyles = makeStyles(theme => ({
   footer: {
@@ -33,7 +34,11 @@ export default function Footer({ author }) {
           align="center"
           gutterBottom
         >
-          made with love by {author}
+          made with{' '}
+          <span role="img" aria-label="heart-emoji" className="heart">
+            💗
+          </span>{' '}
+          by {author}
         </Typography>
       )}
     </Container>
